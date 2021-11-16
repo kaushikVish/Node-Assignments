@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "userName": "chinu",
+    "firstName": "Vishal",
+    "lastName": "kaushik",
+    "password": "1234"
+  },
+  {
+    "id": "2",
+    "userName": "ramu",
+    "firstName": "ram",
+    "lastName": "sharma",
+    "password": "1234"
+  },
+  {
+    "id": "3",
+    "userName": "ramu",
+    "firstName": "vikas",
+    "lastName": "sharma",
+    "password": "1234"
+  },
+  {
+    "id": "4",
+    "userName": "chinu",
+    "firstName": "ramesh",
+    "lastName": "sharma",
+    "password": "1234"
+  },
+  {
+    "id": "5",
+    "userName": "Munna bhaiya",
+    "firstName": "Phool Chand",
+    "lastName": "tripathi",
+    "password": "1234"
+  }
+]
