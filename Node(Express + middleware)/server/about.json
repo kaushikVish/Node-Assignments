@@ -1,0 +1,6 @@
+[
+    {
+        "creator":"Vishal Kaushik",
+        "description": "This is a user management application, in which we can add and delete the users. In this appliaction, we use React for frontend and node,express for backend."
+    }
+]
