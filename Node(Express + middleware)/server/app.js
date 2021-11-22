@@ -95,7 +95,7 @@ app.delete('/delete-user/:id',(req,res)=>{
 })
 
 app.get('/about',(req,res)=>{
-  res.send(JSON.stringify(about));
+  res.send(about);
 })
 
 app.listen(port,()=>{
