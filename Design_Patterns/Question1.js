@@ -48,4 +48,4 @@ youtubeChannel.subscribeChannel(person4);
 youtubeChannel.notifySubscriber(person2);
 youtubeChannel.unsubscribeChannel(person2);
 
-youtube.notifyAllSubscriber();
+youtubeChannel.notifyAllSubscriber();
