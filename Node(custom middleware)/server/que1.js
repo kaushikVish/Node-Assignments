@@ -8,16 +8,24 @@ var cors = require("cors");
 
 var jsonParser = bodyParser.json();
 
-app.use(cors());
+var corsOptions = {
+  origin: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  // Access-Control-Allow-Credentials: true
+};
+
+// app.use(cors());
 app.use(cookieParser());
 
 app.use(
   session({
     secret: "keyboard_cat",
     resave: false,
-    proxy: true,
-    saveUninitialized: true,
-    cookie: { httpOnly: true, maxAge: 360000 },
+    // proxy: true,
+    saveUninitialized: false,
+    // cookie: { httpOnly: true, maxAge: 360000 },
   })
 );
 
@@ -29,9 +37,24 @@ app.get("/authentication", (req, res) => {
   }
 });
 
-app.get("/login", jsonParser, (req, res) => {
-  req.session.authentication = 1;
+app.get("/login", (req, res) => {
+  req.session.isAuth = true;
   req.session.save();
+  // res.setHeader={
+  //               // Authorization: `Bearer ${currentUser.webSessionToken}`,
+  //               "Access-Control-Allow-Origin": '*',
+  //               "Access-Control-Allow-Credentials": 'true',
+  //             }
+  //   .writeHead(200,{
+  //     "Set-Cookie": req.session.isAuth,
+  //     "Access-Control-Allow-Credentials": true
+  //   })
+  res.cookie("cookiename", "heelloo world ", {
+    expires: new Date(Date.now() + 9999999999),
+    httpOnly: true,
+    domain: "localhost:3000",
+    // path: "/dashboard",
+  });
   res.status(200).send("login successfully");
 });
 

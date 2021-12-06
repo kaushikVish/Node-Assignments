@@ -1,6 +1,7 @@
 import React,{useRef,useEffect} from "react";
 import {useNavigate } from "react-router-dom"
 import './login.css'
+import axios from 'axios';
 
 const Login = () => {
     const navigate=useNavigate();
@@ -22,7 +23,8 @@ const Login = () => {
             userName:nameRef.current.value,
             password:passwordRef.current.value
         }
-        const response = await fetch(`http://127.0.0.1:8000/login`);
+        // const response=axios.get(`http://127.0.0.1:8000/login`)
+        const response = await fetch(`http://127.0.0.1:8000/login`)
         if(response.status===200){
             navigate('/dashboard')
         }else{
